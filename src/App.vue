@@ -42,6 +42,7 @@ export default {
     const handleScroll = () => {
       const nearBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight - 200;
+
       if (nearBottom) {
         store.loadCars();
       }

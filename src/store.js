@@ -10,7 +10,7 @@ export const useStore = defineStore({
   }),
   actions: {
     async loadCars() {
-      if (this.currentFile > 5) {
+      if (this.currentFile > 5 || this.loading) {
         return;
       }
 
