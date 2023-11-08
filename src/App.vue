@@ -24,7 +24,12 @@
         <div class="table__cell">{{ car.Origin }}</div>
       </div>
     </div>
-    <img v-if="loading" class="loader" src="preloader.gif" alt="Loading..." />
+    <img
+      v-if="store.loading"
+      class="loader"
+      src="preloader.gif"
+      alt="Loading..."
+    />
   </div>
 </template>
 
@@ -37,7 +42,6 @@ export default {
   setup() {
     const store = useStore();
     const cars = store.cars;
-    const loading = store.loading;
 
     const handleScroll = () => {
       const nearBottom =
@@ -60,7 +64,7 @@ export default {
 
     return {
       cars,
-      loading,
+      store,
     };
   },
 };
